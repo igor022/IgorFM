@@ -129,15 +129,10 @@ section {
         flex-direction: row;
     }
     
-    .episodes:last-child() {
-        padding-right: 0;
-    }
-
-    
-    .episode {
+    .episode:not(:last-child) {
         padding-right: 10px;
     }
-    
+
     .episode-img {
         max-width: 220px;
     }
