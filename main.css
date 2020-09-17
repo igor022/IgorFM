@@ -99,18 +99,52 @@ section {
     margin-bottom: 50px;
 }
 
+
+
 .episodes {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .episode {
-    padding-right: 10px;
+    padding-bottom: 20px;
 }
 
 .episode-img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+}
+
+.episode-img img {
+    width: 100%;
+}
+
+
+
+@media only screen and (min-width: 768px)
+{
+    .episodes {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+    
+    .episodes:last-child() {
+        padding-right: 0;
+    }
+
+    
+    .episode {
+        padding-right: 10px;
+    }
+    
+    .episode-img {
+        max-width: 220px;
+    }
+    
+    .episode-img img {
+        width: 100%;
+    }
 }
 
 .episode p {
