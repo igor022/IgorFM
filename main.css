@@ -20,21 +20,31 @@ header {
     
 }
 
-.header-content {
+nav {
     display: flex;
     justify-content: space-between;
 }
 
-header .header-links {
+nav .nav-logo {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    align-self: flex-start;
+}
+
+nav .header-links {
     margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-header a {
+nav a {
     margin: 0;
-    padding: 15px 25px;
+    padding: 10px 20px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
 }
 
-header a:hover {
+nav .header-links a:hover {
     border-bottom: 3px solid #3C82E7;
     text-decoration: none;
 }
@@ -42,10 +52,10 @@ header a:hover {
 h1 {
     font-family: 'Lato', sans-serif;
     font-weight: 500;
-    font-size: 48px;
+    font-size: 36px;
     line-height: 35px;
     text-align: center;
-    margin: 110px 0 50px 0;
+    margin: 200px 0 20px 0;
 }
 
 h2 {
@@ -54,8 +64,8 @@ h2 {
     font-weight: 500;
 }
 
+nav,
 .container,
-.header-content,
 .footer-content {
     padding: 0 30px;
     max-width: 1080px;
@@ -74,7 +84,7 @@ h2 {
 }
 
 .filter-categories {
-    width: 20%;
+    width: 40%;
     background-color: white;
     color: #818181;
 }
@@ -112,37 +122,16 @@ section {
 
 .episode {
     padding-bottom: 20px;
+    margin: 0 auto;
 }
 
 .episode-img {
+    max-width: 400px;
     width: 100%;
 }
 
 .episode-img img {
     width: 100%;
-}
-
-
-
-@media only screen and (min-width: 768px)
-{
-    .episodes {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
-    }
-    
-    .episode:not(:last-child) {
-        padding-right: 10px;
-    }
-
-    .episode-img {
-        max-width: 220px;
-    }
-    
-    .episode-img img {
-        width: 100%;
-    }
 }
 
 .episode p {
@@ -173,34 +162,42 @@ a:hover {
 
 .top-footer {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;  
+    justify-content: space-between;
+    width: 100%;
     margin-bottom: 40px;
 }
 
 .top-footer .logo {
-    align-self: center;
+  
+    margin-right: 0;
 }
 
-.footer-links {
+.top-footer .footer-links {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.footer-links a {
+
+.top-footer .footer-links a {
+    display: block;
     margin: 10px 0;
 }
 
-.footer-contacts {
+.top-footer .footer-contacts {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+}
+
+.contact {
+    margin: 20px 0;
 }
 
 .contact p {
     margin: 0;
 }
-
 
 .community p {
     margin: 5px 0;
@@ -214,12 +211,123 @@ a:hover {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    flex-direction: column;
 }
 
 .bottom-footer p {
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .bottom-footer .terms a {
     margin: 0 10px;
+}
+
+
+/* Responsive */
+
+@media only screen and (min-width: 768px)
+{
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav a {
+        margin: 0;
+        padding: 15px 25px;
+    }
+
+    nav .nav-logo {
+        font-size: 1.5em;
+        padding: 10px 20px;
+        align-self: center;
+    }
+
+    nav .header-links {
+        margin-right: 5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }    
+
+    h1 {
+        font-size: 48px;
+        margin: 130px 0 50px 0;
+    }
+
+    .filter-categories {
+        width: 20%;
+    }
+
+    .filter-search {
+        width: 40%;
+    }
+
+    .episodes {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+    
+    .episode:not(:last-child) {
+        padding-right: 10px;
+    }
+
+    .episode-img {
+        max-width: 220px;
+    }
+    
+    .episode-img img {
+        width: 100%;
+    }
+    
+    .top-footer {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        margin-bottom: 40px;
+    }
+    
+    .top-footer .logo {
+        align-self: center;
+    }
+    
+    .top-footer .footer-links {
+        display: flex;
+        align-self: flex-end;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .top-footer .footer-links a {
+        margin: 10px 0 10px auto;
+    }
+    
+    .top-footer .footer-contacts {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 30%;
+    }
+
+    .contact {
+        margin-top: 10px;
+    }
+
+    .community {
+        margin-bottom: 50px;
+    }
+
+    .bottom-footer {
+        
+        flex-direction: row;
+    }
+
+    .bottom-footer p {
+        margin: 0;
+    }
+    
+    .bottom-footer .terms a {
+        margin-right: 10px;
+    }
 }
